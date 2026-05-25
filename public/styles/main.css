@@ -1,0 +1,29 @@
+body {
+    background-color: #F8F6F1;
+    color: #242321;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: flex-start;
+    align-items: center;
+}
+.interest-link {
+    color: #424242;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.interest-link-container {
+    margin: 0px 10px;
+}
+
+.logo img {
+    height: 2em;
+}
+
+.toolbar-banner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
