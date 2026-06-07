@@ -1,6 +1,13 @@
 body {
-    background-color: #F8F6F1;
+    background-color: #f8f8f8;
     color: #242321;
+    font-family: "Hind", sans-serif;
+    font-style: normal;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
 }
 
 .header-nav {
@@ -8,6 +15,7 @@ body {
     flex-direction: flex-start;
     align-items: center;
 }
+
 .interest-link {
     color: #424242;
     text-decoration: none;
@@ -15,15 +23,17 @@ body {
 }
 
 .interest-link-container {
-    margin: 0px 10px;
+    margin: 0px 30px;
 }
 
-.logo img {
-    height: 2em;
-}
+
 
 .toolbar-banner {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+#logo {
+    height: 1.7em;
 }
