@@ -6,22 +6,8 @@ import db from "./db.js";
 const app = express();
 const port = process.env.PORT;
 
-let posta_data = [];
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-db.connect();
-
-db.query("SELECT * FROM posta", (err, res) => {
-    if (err) {
-        console.error("Error executing query", err.stack);
-    } else {
-        posta_data = res.rows;
-    }
-
-    db.end();
-});
 
 app.use(express.static("public"));
 
@@ -33,8 +19,14 @@ app.get("/piping", (req, res) => {
     res.render("piping.ejs");
 });
 
-app.get("/reading", (req, res) => {
-    res.render("reading.ejs", {data: posta_data});
+app.get("/reading", async (req, res) => {
+    try {
+        const result = await db.query("SELECT * FROM posta");
+        res.render("reading.ejs", { data: result.rows });
+    } catch (err) {
+        console.error("Error executing query", err.stack);
+        res.status(500).send("Database query failed");
+    }
 });
 
 app.get("/writing", (req, res) => {
