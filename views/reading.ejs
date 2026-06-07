@@ -1,7 +1,16 @@
 <%- include("header.ejs") %>
 
-<h2>I like to read</h2>
-<p><%= data[0].title %></p>
-<p><%= data[0].body %></p>
+<h1>Reading Page</h1>
+
+<% if (data.length === 0) { %>
+    <p>No posts found.</p>
+<% } else { %>
+    <% data.forEach((post) => { %>
+        <article>
+            <h2><%= post.title %></h2>
+            <p><%= post.body %></p>
+        </article>
+    <% }) %>
+<% } %>
 
 <%- include("footer.ejs") %>
