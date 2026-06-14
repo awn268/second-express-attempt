@@ -7,7 +7,7 @@
 <% } else { %>
     <% data.forEach((post) => { %>
         <article>
-            <a href="/posts/<%= post.slug %>"><%= post.title %></h2>
+            <a href="/posts/<%= post.slug %>"><%= post.title %></a>
             <p><%= post.body %></p>
         </article>
     <% }) %>

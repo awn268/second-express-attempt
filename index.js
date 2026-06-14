@@ -38,9 +38,7 @@ app.get("/posts/:slug", async (req, res) => {
         const result = await db.query("SELECT * FROM posta WHERE slug = $1",
             [req.body.slug]
         );
-        res.render("post.ejs", 
-            { data: result.rows }
-        );
+        res.render("post.ejs");
     } catch (err) {
         console.error("Error executing query", err.stack);
         res.status(500).send("Database query failed");
