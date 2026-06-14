@@ -36,7 +36,7 @@ app.get("/writing", (req, res) => {
 app.get("/posts/:slug", async (req, res) => {
     try {
         const result = await db.query("SELECT * FROM posta WHERE slug = $1",
-            [req.body.slug]
+            [req.params.slug]
         );
         res.render("post.ejs");
     } catch (err) {
