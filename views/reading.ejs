@@ -6,10 +6,7 @@
     <p>No posts found.</p>
 <% } else { %>
     <% data.forEach((post) => { %>
-        <article>
-            <a href="/posts/<%= post.slug %>"><%= post.title %></a>
-            <p><%= post.body %></p>
-        </article>
+        <a href="/posts/<%= post.slug %>"><%= post.title %></a>
     <% }) %>
 <% } %>
 

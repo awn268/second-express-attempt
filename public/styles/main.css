@@ -26,7 +26,13 @@ footer {
     margin: 0px 30px;
 }
 
+.section-break {
+    text-align: center;
+}
 
+.song-title {
+    font-style: italic;
+}
 
 .toolbar-banner {
     display: flex;
