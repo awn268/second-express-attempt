@@ -16,6 +16,16 @@ footer {
     align-items: center;
 }
 
+.header-nav-item {
+    margin: 0px 30px;
+}
+
+.header-nav-item-link {
+    color: #424242;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
 .interest-link {
     color: #424242;
     text-decoration: none;
@@ -30,6 +40,11 @@ footer {
     text-align: center;
 }
 
+.site-raisin-debt {
+    font-size: 1.2rem;
+    margin: 10px 30px;
+}
+
 .song-title {
     font-style: italic;
 }
@@ -37,6 +52,12 @@ footer {
 .toolbar-banner {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+}
+
+.welcome-message-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
