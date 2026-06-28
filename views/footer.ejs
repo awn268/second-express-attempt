@@ -1,5 +1,14 @@
 <footer>
     <% d = new Date() %>
     <% year = d.getFullYear() %>
-    <p>Copyright © <%= year %></p>
+    <div class="footer-container">
+        <div class="footer-link-container">
+            <a class="footer-link" href="/contact">Contact</a>
+            <a class="footer-link" href="/about">About</a>
+            <a class="footer-link" href="/support">Support</a>
+        </div>
+        <div class="copyright-container">
+            <p>Copyright © <%= year %></p>
+        </div>
+    </div>
 </footer>

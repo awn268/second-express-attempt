@@ -37,11 +37,9 @@ app.get("/contact", (req, res) => {
     res.render("contact.ejs");
 });
 
-app.get("/piping", (req, res) => {
-    res.render("piping.ejs");
+app.get("/POTS", (req, res) => {
+    res.render("POTS.ejs");
 });
-
-
 
 app.get("/support", (req, res) => {
     res.render("support.ejs");
