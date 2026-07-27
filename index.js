@@ -57,7 +57,7 @@ app.get("/reading", async (req, res) => {
 
 app.get("/posts/:slug", async (req, res) => {
     try {
-        const result = await db.query("SELECT * FROM posta WHERE slug = $1 AND category = 'reading'",
+        const result = await db.query("SELECT * FROM posta WHERE slug = $1 AND category = 'reading';",
             [req.params.slug]
         );
         res.render("post.ejs", 

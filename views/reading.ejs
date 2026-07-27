@@ -1,13 +1,16 @@
 <%- include("header.ejs") %>
 
-<h1>Reading Page</h1>
-
-<% if (data.length === 0) { %>
-    <p>No posts found.</p>
-<% } else { %>
-    <% data.forEach((post) => { %>
-        <a href="/posts/<%= post.slug %>"><%= post.title %></a>
-    <% }) %>
-<% } %>
-
+<main>
+    <div class="reading-page">
+        <div class="reading-body-container main-block">
+            <% if (data.length === 0) { %>
+                <p>No posts found.</p>
+            <% } else { %>
+                <% data.forEach((post) => { %>
+                    <a href="/posts/<%= post.slug %>"><%= post.title %></a>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+</main>
 <%- include("footer.ejs") %>

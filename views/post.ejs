@@ -1,6 +1,16 @@
 <%- include("header.ejs") %>
 
-<h2><%= data.title %></h2>
-<%- data.body %>
+<main>
+    <div class="post-page">
+        <div class="post-body-container main-block">
+            <div>
+                <h2><%= data.title %></h2>
+                <%- data.body %>
+            </div>
+        </div>
+    </div>
+</main>
+
+
 
 <%- include("footer.ejs") %>
