@@ -1,8 +1,9 @@
 body {
-    background-color: #fefefe;
+    background-color: #f1f1f1;
     color: #242321;
     font-family: "Roboto";
     font-style: normal;
+    margin: 0px;
 }
 
 footer {
@@ -19,6 +20,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 50px;
 }
 
 .footer-link {
@@ -36,23 +38,34 @@ footer {
 .header-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
 }
 
 .header-nav {
     display: flex;
     flex-direction: flex-start;
     align-items: center;
+    padding-right: 50px;
 }
 
 .header-nav-item {
-    margin: 0px 30px;
+    margin-left: 60px;
 }
 
 .header-nav-item-link {
     color: #424242;
     text-decoration: none;
     font-size: 1.3rem;
+}
+
+.index-body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.index-page {
+    display: flex;
+    justify-content: center;
 }
 
 .interest-link {
@@ -65,6 +78,11 @@ footer {
     margin: 0px 30px;
 }
 
+.main-block {
+    background-color: #fefefe;
+    width: 1400px;
+}
+
 .section-break {
     text-align: center;
 }
@@ -75,6 +93,7 @@ footer {
     width: 1300px;
     text-align: justify;
     margin: 0px 20px;
+    background-color: #fefefe;
 }
 
 .site-raisin-debt-container {
@@ -90,15 +109,10 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1300px;
-}
-
-.welcome-message-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-top: 15px;
 }
 
 #logo {
     height: 1.7em;
+    padding-left: 50px;
 }

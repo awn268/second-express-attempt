@@ -6,7 +6,7 @@ import db from "./db.js";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.LOCAL_PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-//BASIC GET REQUESTS, NO DB CONNECTION REQURIED
+//-----------------BASIC GET REQUESTS, NO DB CONNECTION REQURIED-------------------
 app.get("/", (req, res) => {
     res.render("index.ejs");
 });
@@ -40,7 +40,9 @@ app.get("/writing", (req, res) => {
 });
 
 
-//MORE COMPLEX GET REQUESTS, DB CONNECTION REQUIRED
+//-------------------MORE COMPLEX GET REQUESTS, DB CONNECTION REQUIRED------------------
+
+//Render the reading page with all of its posts
 app.get("/reading", async (req, res) => {
     try {
         const result = await db.query("SELECT * FROM posta");
@@ -51,9 +53,11 @@ app.get("/reading", async (req, res) => {
     }
 });
 
+//Render an individual
+
 app.get("/posts/:slug", async (req, res) => {
     try {
-        const result = await db.query("SELECT * FROM posta WHERE slug = $1",
+        const result = await db.query("SELECT * FROM posta WHERE slug = $1 AND category = 'reading'",
             [req.params.slug]
         );
         res.render("post.ejs", 
