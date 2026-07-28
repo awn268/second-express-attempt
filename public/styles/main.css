@@ -50,6 +50,10 @@ main {
     padding: 100px 75px 0px 75px;
 }
 
+.collaborative-support-container {
+    font-size: 1.2rem;
+    padding: 100px 75px 0px 75px;
+}
 
 .contact-body-container {
     display: flex;
@@ -64,6 +68,11 @@ main {
 
 .email-contact {
     font-size: 1.3rem;
+}
+
+.financial-support-container {
+    font-size: 1.2rem;
+    padding: 100px 75px 0px 75px;
 }
 
 .footer-container {
@@ -188,6 +197,18 @@ main {
     display: flex;
     justify-content: center;
     background-color: #f1f1f1;
+}
+
+.support-page-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+
+.support-page-block-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .toolbar-banner {
