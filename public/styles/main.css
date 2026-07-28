@@ -27,11 +27,29 @@ main {
     margin-right: auto;
 }
 
+.about-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+
+.about-block-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .about-body-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.about-intro {   
+    font-size: 1.2rem;
+    padding: 100px 75px 0px 75px;
+}
+
 
 .contact-body-container {
     display: flex;
@@ -108,6 +126,11 @@ main {
 
 .interest-link-container {
     margin: 0px 30px;
+}
+
+.interests-block {
+    font-size: 1.2rem;
+    padding: 100px 75px 0px 75px;
 }
 
 .main-block {
