@@ -3,10 +3,13 @@
 <main>
     <div class="POTS-page">
         <div class="POTS-body-container main-block">
-            <div>
-                <h2>This page is under construction. It will one day represent my journey 
-                    through learning more about POTS in an attempt to improve my sleep</h2>
-            </div>
+            <% if (data.length === 0) { %>
+                <p>No posts found.</p>
+            <% } else { %>
+                <% data.forEach((post) => { %>
+                    <a href="/posts/<%= post.slug %>"><%= post.title %></a>
+                <% }) %>
+            <% } %>
         </div>
     </div>
 </main>

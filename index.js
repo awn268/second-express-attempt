@@ -27,16 +27,8 @@ app.get("/contact", (req, res) => {
     res.render("contact.ejs");
 });
 
-app.get("/POTS", (req, res) => {
-    res.render("POTS.ejs");
-});
-
 app.get("/support", (req, res) => {
     res.render("support.ejs");
-});
-
-app.get("/writing", (req, res) => {
-    res.render("writing.ejs");
 });
 
 
@@ -45,8 +37,30 @@ app.get("/writing", (req, res) => {
 //Render the reading page with all of its posts
 app.get("/reading", async (req, res) => {
     try {
-        const result = await db.query("SELECT * FROM posta");
+        const result = await db.query("SELECT * FROM posta WHERE category = 'reading'");
         res.render("reading.ejs", { data: result.rows });
+    } catch (err) {
+        console.error("Error executing query", err.stack);
+        res.status(500).send("Database query failed");
+    }
+});
+
+//Render the writing page with all of its posts
+app.get("/writing", async (req, res) => {
+    try {
+        const result = await db.query("SELECT * FROM posta WHERE category = 'writing';");
+        res.render("writing.ejs", { data: result.rows });
+    } catch (err) {
+        console.error("Error executing query", err.stack);
+        res.status(500).send("Database query failed");
+    }
+})
+
+//Render the POTS page with all of its posts
+app.get("/POTS", async (req, res) => {
+    try {
+        const result = await db.query("SELECT * FROM posta WHERE category = 'POTS'");
+        res.render("POTS.ejs", { data: result.rows });
     } catch (err) {
         console.error("Error executing query", err.stack);
         res.status(500).send("Database query failed");
@@ -57,7 +71,7 @@ app.get("/reading", async (req, res) => {
 
 app.get("/posts/:slug", async (req, res) => {
     try {
-        const result = await db.query("SELECT * FROM posta WHERE slug = $1 AND category = 'reading';",
+        const result = await db.query("SELECT * FROM posta WHERE slug = $1;",
             [req.params.slug]
         );
         res.render("post.ejs", 

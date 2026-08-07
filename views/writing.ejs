@@ -3,9 +3,13 @@
 <main>
     <div class="writing-page">
         <div class="writing-body-container main-block">
-            <div>
-                <h2>I like to write even more than I like to read.</h2>
-            </div>
+            <% if (data.length === 0) { %>
+                <p>No posts found.</p>
+            <% } else { %>
+                <% data.forEach(post => { %>
+                    <a href="/posts/<%= post.slug %>"><%= post.title %></a>
+                <% }); %>
+            <% } %>
         </div>
     </div>
 </main>
